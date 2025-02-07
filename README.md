@@ -71,19 +71,21 @@ Demo: [https://nobelium.vercel.app/](https://nobelium.vercel.app/)
 Unofficial, thanks to [@Vaayne](https://github.com/craigary/nobelium/pull/157)'s work!
 
 ### Build Docker image yourself
+
 ```
 # set env
 export NOTION_PAGE_ID=xxx # your NOTION_PAGE_ID
 export IMAGE=nobelium:latest
 
 # build with docker
-docker build -t ${IMAGE} --build-arg NOTION_PAGE_ID .
+docker build -t nobelium:latest .
 
 # run with docker
-docker run -d --name nobelium -p 3000:3000 -e NOTION_PAGE_ID=${NOTION_PAGE_ID} nobelium:latest
+docker run -d --name nobelium -p 3000:3000  nobelium:latest
 ```
 
 ### Use default docker image
+
 ```
 # pull image
 docker pull ghcr.io/craigary/nobelium:main
